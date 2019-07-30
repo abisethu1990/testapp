@@ -142,3 +142,46 @@
   142  docker ps -a
   143  docker volume ls
   144  history
+  145  docker ps -a
+  146  docker stop logagent
+  147  docker stop testapache
+  148  docker rm logagent
+  149  docker rm testapache
+  150  docker ps -a
+  151  docker network ls
+  152  ifconfig -a|more
+  153  docker inspect bridge
+  154  docker network create --driver=bridge --subnet 10.1.0.0/16 --gateway 10.1.0.1 testnw
+  155  docker network ls
+  156  docker inspect network testnw
+  157  docker run -d -p 9000:80 --name frontend --net testnw mohanraz81/threetierfe:latest
+  158  docker run -d --name backend --net testnw mohanraz81/threetierfe:latest
+  159  docker inspect network testnw
+  160  docker exec -it frontend /bin/bash
+  161  docker stop frontend backend; docker rm frontend backend
+  162  docker run -d --name backend mohanraz81/threetierfe:latest
+  163  docker run -d -p 9000:80 --name frontend mohanraz81/threetierfe:latest
+  164  docker exec -it frontend /bin/bash
+  165  docker stop frontend backend; docker rm frontend backend
+  166  docker run -d --name backend mohanraz81/threetierfe:latest
+  167  docker run -d -p 9000:80 --name frontend --link backend  mohanraz81/threetierfe:latest
+  168  docker exec -it frontend /bin/bash
+  169  docker exec -it backend /bin/bash
+  170  sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  171  sudo chmod +x /usr/local/bin/docker-compose
+  172  docker -compose
+  173  cd testapp
+  174  docker-compose build 
+  175  docker images
+  176  docker-compose down
+  177  docker ps -a
+  178  docker stop frontend backend
+  179  docker rm frontend backend
+  180  docker-compose up -d
+  181  docker ps -a
+  182  docker network la
+  183  docker network ls
+  184  docker volume ls
+  185  docker-compose login
+  186  docker login
+  187  docker-compose push
