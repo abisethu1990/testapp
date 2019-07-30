@@ -1,0 +1,98 @@
+    1  sudo yum -y install docker
+    2  whoami
+    3  sudo usermod -a -G docker ec2-user
+    4  id -a
+    5  sudo service docker start
+    6  sudo chkconfig docker on
+    7  history
+    8  sudo service docker status
+    9  docker info
+   10  docker pull httpd:2.4
+   11  docker images
+   12  docker inspect httpd:2.4
+   13  docker run -d --name testapache httpd:2.4
+   14  docker ps
+   15  docker ps -a
+   16  docker stop testapache
+   17  docker ps
+   18  docker ps -a
+   19  git clone https://github.com/abisethu1990/testapp.git
+   20  docker build -t abisethu1990/myapache:1.0 testapp/frontend
+   21  docker images
+   22  docker run -d --name myapache -p 9000:80 abisethu1990/myapache
+   23  docker images
+   24  docker run -d --name myapache -p 9000:80 abisethu1990/myapache
+   25  docker run -d --name myapache -p 9000:80 abisethu1990/myapache:1.0
+   26  curl http://localhost:9000
+   27  history
+   28  curl http://localhost:9000
+   29  docker ps -a
+   30  docker run -d -name myapache -p 9000:80 abisethu1990/apache:1.0
+   31  docker run -d --name myapache -p 9000:80 abisethu1990/apache:1.0
+   32  docker run -d --name myapache -p 9000:80 abisethu1990/myapache:1.0
+   33  whoami
+   34  sudo service docker start
+   35  sudo chkconfigdocker on
+   36  docker ps -a
+   37  docker pull ubuntu
+   38  docker pull nginx
+   39  docker pull php
+   40  docker pull livezone/php-gd
+   41  docker pull svendocker/php-mysql
+   42  docker images
+   43  docker run -d --name testubuntu ubuntu
+   44  docker build -t abisethu1990/
+   45  docker build -t abisethu1990/myapache:1.0 testapp/exercise
+   46  docker run -d --name myapache -p 9000:80 abisethu1990/myapache:1.0
+   47  docker ps 
+   48  docker ps -a
+   49  docker run -d --name testubuntu -p 9000:80 abisethu1990/testubuntu
+   50  docker run -d --name testubuntu -p 9000:80 testubuntu
+   51  docker run -d --name testubuntu -p 9000:80 abisethu1990/myapache:1.0
+   52  docker ps -a
+   53  docker stop testubuntu
+   54  docker rm testubuntu
+   55  docker ps -a
+   56  docker images
+   57  docker build -t abisethu1990/nginx:1.0 nginx/frontend
+   58  docker run -d --name nginx -p 9000:80 abisethu1990/ngix:1.0
+   59  docker run -d --name nginx -p 9000:80 abisethu1990/nginx:1.0
+   60  curl http://localhost:9000
+   61  docker run -d --name nginx -p 9010:80 abisethu1990/nginx:1.0
+   62  docker ps -a
+   63  docker stop nginx
+   64  docker rm nginx
+   65  docker ps -a
+   66  docker build -t abisethu1990/nginx:1.0 nginx/frontend
+   67  docker run -d --name nginx -p 9001:80 abisethu1990/nginx:1.0
+   68  curl http://localhost:9001
+   69  docker ps -a
+   70  docker run nginx
+   71  docker run -d --name nginx -p 9007:80 abisethu1990/nginx:1.0
+   72  curl http://localhost:9001
+   73  docker run abisethu1990/nginx:1.0
+   74  docker push abisethu1990/nginx:1.0
+   75  docker ps -a
+   76  docker stop nginx
+   77  docker remove nginx
+   78  docker rm nginx
+   79  docker ps -a
+   80  docker stop zen_keller
+   81  docker rm zen_keller
+   82  docker stop eager_hermann
+   83  docker rm eager_hermann
+   84  docker ps -a
+   85  docker build -t abisethu1990/nginx:1.0 nginx/frontend
+   86  docker push abisethu1990/nginx:1.0
+   87  docker build -t abisethu1990/nginx:1.0 nginx/frontend
+   88  docker run -d --name nginx -p 9010:80 abisethu1990/nginx:1.0
+   89  docker inspect nginx
+   90  docker ps -a
+   91  docker logs nginx
+   92  docker stop nginx
+   93  docker rm nginx
+   94  docker ps -a
+   95  docker build -t abisethu1990/nginx:1.0 nginx/frontend
+   96  docker run -d --name nginx -p 9010:80 abisethu1990/nginx:1.0
+   97  curl http://localhost:9010
+   98  history
