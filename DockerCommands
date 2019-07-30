@@ -96,3 +96,49 @@
    96  docker run -d --name nginx -p 9010:80 abisethu1990/nginx:1.0
    97  curl http://localhost:9010
    98  history
+   99  git push
+  100  docker ps -a
+  101  docker rm nginx myapache
+  102  docker stop nginx
+  103  docker rm nginx
+  104  docker stop myapache
+  105  docker rm myapache
+  106  docker rm testapache
+  107  docker ps -a
+  108  docker run -d -p 9000:80 --name testapache -v testapache_var_log:/var/log -v /home/ec2-user:/home/ec2-user abisethu1990/myapache3007:1.0
+  109  docker ps -a
+  110  docker images
+  111  docker run -d -p 9000:80 --name testapache -v testapache_var_log:/var/log -v /home/ec2-user:/home/ec2-user abisethu1990/myapache:1.0
+  112  docker exec -t testapache /bin/bash
+  113  docker exec -it testapache /bin/bash
+  114  docker ps -a
+  115  docker exec -it testapache /bin/bash
+  116  docker run -d -p 9000:80 --name testapache -v testapache_var_log:/var/log -v /home/ec2-user:/home/ec2-user mohanraz81/threetierfe:latest
+  117  docker ps -a
+  118  docker rm testapache
+  119  docker run -d -p 9000:80 --name testapache -v testapache_var_log:/var/log -v /home/ec2-user:/home/ec2-user mohanraz81/threetierfe:latest
+  120  docker exec -it testapache /bin/bash
+  121  docker ps -a
+  122  docker logs testapache
+  123  docker ps
+  124  docker volume
+  125  docker volumes
+  126  docker volume ls
+  127  docker ps -a
+  128  docker rm testapache
+  129  docker rm volume testapache_var_log
+  130  docker rm testapache_var_log
+  131  docker volume rm testapache_var_log
+  132  docker run -d -p 9000:80 --name testapache -v testapache_var_log:/var/log -v /home/ec2-user:/home/ec2-user mohanraz81/threetierfe:latest
+  133  docker exec -it testapache /bin/bash
+  134  git clone https://github.com/mohanraz81/awslogs.git
+  135  history
+  136  mv ~/.aws ~/.awsbkup
+  137  docker build -t mohanraz81/awslogs:1.0 awslogs
+  138  docker volume ls
+  139  docker run -d --name logagent -v testapache_var_log
+  140  docker run -d --name logagent -v testapache_var_log:/mnt/log:ro mohanraz81/awslogs:1.0
+  141  curl http://localhost:9000
+  142  docker ps -a
+  143  docker volume ls
+  144  history
