@@ -35,3 +35,4 @@
   228  kubectl describe rs apache-deployment-56447c5445
   229  kubectl get pods
   230  kubectl describe pod apache-deployment-56447c5445-6xc6j
+  231  kubectl get service
