@@ -1,0 +1,37 @@
+  194  mv ~/.aws ~/.awsbkup3
+  195  pip install awscli --upgrade --user
+  196  curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.13.7/2019-06-11/bin/linux/amd64/aws-iam-authenticator
+  197  chmod +x ./aws-iam-authenticator
+  198  mkdir -p $HOME/bin && cp ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator && export PATH=$HOME/bin:$PATH
+  199  echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
+  200  aws-iam-authenticator help
+  201  curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+  202  sudo mv /tmp/eksctl /usr/local/bin
+  203  eksctl version
+  204  eksctl create cluster --region us-east-1 --name prod --version 1.13 --nodegroup-name standard-workers --node-type t3.small --nodes 3 --nodes-min 3 --nodes-max 3 --node-ami auto
+  205  curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+  206  chmod +x ./kubectl
+  207  sudo mv ./kubectl /usr/local/bin/kubectl
+  208  kubectl version
+  209  kubectl get nodes
+  210  mv ~/.aws ~/.awsbkup1
+  211  cat ~/.kube/config
+  212  kubectl get nodes
+  213  kubectl describe node ip-192-168-27-115.ec2.internal
+  214  kubectl get namespaces
+  215  kubectl get pods --namespace=kube-system
+  216  kubectl get pods --namespace=kube-public
+  217  kubectl get svc --namespace=kube-public
+  218  kubectl create namespace test
+  219  kubectl get namespace
+  220  kubectl describe namespace test
+  221  kubectl config set-context $(kubectl config current-context) --namespace=test
+  222  kubectl config view
+  223  kubectl config view | grep namespace
+  224  kubectl apply -f testapp/deploy.yaml
+  225  kubectl get deployment
+  226  kubectl describe deployment apache-deployment
+  227  kubectl get rs
+  228  kubectl describe rs apache-deployment-56447c5445
+  229  kubectl get pods
+  230  kubectl describe pod apache-deployment-56447c5445-6xc6j
