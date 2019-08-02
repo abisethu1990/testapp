@@ -1,0 +1,431 @@
+    1  sudo yum -y install docker
+    2  whoami
+    3  sudo usermod -a -G docker ec2-user
+    4  id -a
+    5  sudo service docker start
+    6  sudo chkconfig docker on
+    7  history
+    8  sudo service docker status
+    9  docker info
+   10  docker pull httpd:2.4
+   11  docker images
+   12  docker inspect httpd:2.4
+   13  docker run -d --name testapache httpd:2.4
+   14  docker ps
+   15  docker ps -a
+   16  docker stop testapache
+   17  docker ps
+   18  docker ps -a
+   19  git clone https://github.com/abisethu1990/testapp.git
+   20  docker build -t abisethu1990/myapache:1.0 testapp/frontend
+   21  docker images
+   22  docker run -d --name myapache -p 9000:80 abisethu1990/myapache
+   23  docker images
+   24  docker run -d --name myapache -p 9000:80 abisethu1990/myapache
+   25  docker run -d --name myapache -p 9000:80 abisethu1990/myapache:1.0
+   26  curl http://localhost:9000
+   27  history
+   28  curl http://localhost:9000
+   29  docker ps -a
+   30  docker run -d -name myapache -p 9000:80 abisethu1990/apache:1.0
+   31  docker run -d --name myapache -p 9000:80 abisethu1990/apache:1.0
+   32  docker run -d --name myapache -p 9000:80 abisethu1990/myapache:1.0
+   33  whoami
+   34  sudo service docker start
+   35  sudo chkconfigdocker on
+   36  docker ps -a
+   37  docker pull ubuntu
+   38  docker pull nginx
+   39  docker pull php
+   40  docker pull livezone/php-gd
+   41  docker pull svendocker/php-mysql
+   42  docker images
+   43  docker run -d --name testubuntu ubuntu
+   44  docker build -t abisethu1990/
+   45  docker build -t abisethu1990/myapache:1.0 testapp/exercise
+   46  docker run -d --name myapache -p 9000:80 abisethu1990/myapache:1.0
+   47  docker ps 
+   48  docker ps -a
+   49  docker run -d --name testubuntu -p 9000:80 abisethu1990/testubuntu
+   50  docker run -d --name testubuntu -p 9000:80 testubuntu
+   51  docker run -d --name testubuntu -p 9000:80 abisethu1990/myapache:1.0
+   52  docker ps -a
+   53  docker stop testubuntu
+   54  docker rm testubuntu
+   55  docker ps -a
+   56  docker images
+   57  docker build -t abisethu1990/nginx:1.0 nginx/frontend
+   58  docker run -d --name nginx -p 9000:80 abisethu1990/ngix:1.0
+   59  docker run -d --name nginx -p 9000:80 abisethu1990/nginx:1.0
+   60  curl http://localhost:9000
+   61  docker run -d --name nginx -p 9010:80 abisethu1990/nginx:1.0
+   62  docker ps -a
+   63  docker stop nginx
+   64  docker rm nginx
+   65  docker ps -a
+   66  docker build -t abisethu1990/nginx:1.0 nginx/frontend
+   67  docker run -d --name nginx -p 9001:80 abisethu1990/nginx:1.0
+   68  curl http://localhost:9001
+   69  docker ps -a
+   70  docker run nginx
+   71  docker run -d --name nginx -p 9007:80 abisethu1990/nginx:1.0
+   72  curl http://localhost:9001
+   73  docker run abisethu1990/nginx:1.0
+   74  docker push abisethu1990/nginx:1.0
+   75  docker ps -a
+   76  docker stop nginx
+   77  docker remove nginx
+   78  docker rm nginx
+   79  docker ps -a
+   80  docker stop zen_keller
+   81  docker rm zen_keller
+   82  docker stop eager_hermann
+   83  docker rm eager_hermann
+   84  docker ps -a
+   85  docker build -t abisethu1990/nginx:1.0 nginx/frontend
+   86  docker push abisethu1990/nginx:1.0
+   87  docker build -t abisethu1990/nginx:1.0 nginx/frontend
+   88  docker run -d --name nginx -p 9010:80 abisethu1990/nginx:1.0
+   89  docker inspect nginx
+   90  docker ps -a
+   91  docker logs nginx
+   92  docker stop nginx
+   93  docker rm nginx
+   94  docker ps -a
+   95  docker build -t abisethu1990/nginx:1.0 nginx/frontend
+   96  docker run -d --name nginx -p 9010:80 abisethu1990/nginx:1.0
+   97  curl http://localhost:9010
+   98  history
+   99  git push
+  100  docker ps -a
+  101  docker rm nginx myapache
+  102  docker stop nginx
+  103  docker rm nginx
+  104  docker stop myapache
+  105  docker rm myapache
+  106  docker rm testapache
+  107  docker ps -a
+  108  docker run -d -p 9000:80 --name testapache -v testapache_var_log:/var/log -v /home/ec2-user:/home/ec2-user abisethu1990/myapache3007:1.0
+  109  docker ps -a
+  110  docker images
+  111  docker run -d -p 9000:80 --name testapache -v testapache_var_log:/var/log -v /home/ec2-user:/home/ec2-user abisethu1990/myapache:1.0
+  112  docker exec -t testapache /bin/bash
+  113  docker exec -it testapache /bin/bash
+  114  docker ps -a
+  115  docker exec -it testapache /bin/bash
+  116  docker run -d -p 9000:80 --name testapache -v testapache_var_log:/var/log -v /home/ec2-user:/home/ec2-user mohanraz81/threetierfe:latest
+  117  docker ps -a
+  118  docker rm testapache
+  119  docker run -d -p 9000:80 --name testapache -v testapache_var_log:/var/log -v /home/ec2-user:/home/ec2-user mohanraz81/threetierfe:latest
+  120  docker exec -it testapache /bin/bash
+  121  docker ps -a
+  122  docker logs testapache
+  123  docker ps
+  124  docker volume
+  125  docker volumes
+  126  docker volume ls
+  127  docker ps -a
+  128  docker rm testapache
+  129  docker rm volume testapache_var_log
+  130  docker rm testapache_var_log
+  131  docker volume rm testapache_var_log
+  132  docker run -d -p 9000:80 --name testapache -v testapache_var_log:/var/log -v /home/ec2-user:/home/ec2-user mohanraz81/threetierfe:latest
+  133  docker exec -it testapache /bin/bash
+  134  git clone https://github.com/mohanraz81/awslogs.git
+  135  history
+  136  mv ~/.aws ~/.awsbkup
+  137  docker build -t mohanraz81/awslogs:1.0 awslogs
+  138  docker volume ls
+  139  docker run -d --name logagent -v testapache_var_log
+  140  docker run -d --name logagent -v testapache_var_log:/mnt/log:ro mohanraz81/awslogs:1.0
+  141  history
+  142  curl http://localhost:9000
+  143  docker ps -a
+  144  docker volume ls
+  145  history
+  146  docker ps -a
+  147  docker stop logagent
+  148  docker stop testapache
+  149  docker rm logagent
+  150  docker rm testapache
+  151  docker ps -a
+  152  docker network ls
+  153  ifconfig -a|more
+  154  docker inspect bridge
+  155  docker network create --driver=bridge --subnet 10.1.0.0/16 --gateway 10.1.0.1 testnw
+  156  docker network ls
+  157  docker inspect network testnw
+  158  docker run -d -p 9000:80 --name frontend --net testnw mohanraz81/threetierfe:latest
+  159  docker run -d --name backend --net testnw mohanraz81/threetierfe:latest
+  160  docker inspect network testnw
+  161  docker exec -it frontend /bin/bash
+  162  docker stop frontend backend; docker rm frontend backend
+  163  docker run -d --name backend mohanraz81/threetierfe:latest
+  164  docker run -d -p 9000:80 --name frontend mohanraz81/threetierfe:latest
+  165  docker exec -it frontend /bin/bash
+  166  docker stop frontend backend; docker rm frontend backend
+  167  docker run -d --name backend mohanraz81/threetierfe:latest
+  168  docker run -d -p 9000:80 --name frontend --link backend  mohanraz81/threetierfe:latest
+  169  docker exec -it frontend /bin/bash
+  170  docker exec -it backend /bin/bash
+  171  sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  172  sudo chmod +x /usr/local/bin/docker-compose
+  173  docker -compose
+  174  cd testapp
+  175  docker-compose build 
+  176  docker images
+  177  docker-compose down
+  178  docker ps -a
+  179  docker stop frontend backend
+  180  docker rm frontend backend
+  181  docker-compose up -d
+  182  docker ps -a
+  183  docker network la
+  184  docker network ls
+  185  docker volume ls
+  186  docker-compose login
+  187  docker login
+  188  docker-compose push
+  189  history
+  190  cd testapp
+  191  git add *
+  192  exit
+  193  history
+  194  mv ~/.aws ~/.awsbkup3
+  195  pip install awscli --upgrade --user
+  196  curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.13.7/2019-06-11/bin/linux/amd64/aws-iam-authenticator
+  197  chmod +x ./aws-iam-authenticator
+  198  mkdir -p $HOME/bin && cp ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator && export PATH=$HOME/bin:$PATH
+  199  echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
+  200  aws-iam-authenticator help
+  201  curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+  202  sudo mv /tmp/eksctl /usr/local/bin
+  203  eksctl version
+  204  eksctl create cluster --region us-east-1 --name prod --version 1.13 --nodegroup-name standard-workers --node-type t3.small --nodes 3 --nodes-min 3 --nodes-max 3 --node-ami auto
+  205  curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+  206  chmod +x ./kubectl
+  207  sudo mv ./kubectl /usr/local/bin/kubectl
+  208  kubectl version
+  209  kubectl get nodes
+  210  mv ~/.aws ~/.awsbkup1
+  211  cat ~/.kube/config
+  212  kubectl get nodes
+  213  kubectl describe node ip-192-168-27-115.ec2.internal
+  214  kubectl get namespaces
+  215  kubectl get pods --namespace=kube-system
+  216  kubectl get pods --namespace=kube-public
+  217  kubectl get svc --namespace=kube-public
+  218  kubectl create namespace test
+  219  kubectl get namespace
+  220  kubectl describe namespace test
+  221  kubectl config set-context $(kubectl config current-context) --namespace=test
+  222  kubectl config view
+  223  kubectl config view | grep namespace
+  224  kubectl apply -f testapp/deploy.yaml
+  225  kubectl get deployment
+  226  kubectl describe deployment apache-deployment
+  227  kubectl get rs
+  228  kubectl describe rs apache-deployment-56447c5445
+  229  kubectl get pods
+  230  kubectl describe pod apache-deployment-56447c5445-6xc6j
+  231  history
+  232  kubectl get service
+  233  eksctl delete cluster --region us-east-1 --name prod
+  234  mv ~/.aws ~/.awstest
+  235  eksctl create cluster --region us-east-1 --name prod --version 1.13 --nodegroup-name standard-workers --node-type t3.medium --zones=us-east-1a,us-east-1b,us-east-1c --nodes 4 --nodes-min 4 --nodes-max 4 --node-ami auto
+  236  kubectl get nodes
+  237  kubectl apply -f testapp/deploy.yaml
+  238  kubectl describe deployment apache-deployment
+  239  kubectl describe service testfrontend
+  240  kubectl get pods
+  241  kubectl describe pod apache-deployment-954897f69-cf8fv
+  242  kubectl get hps
+  243  kubectl get hpa
+  244  kubectl describe hpa
+  245  curl -LO https://git.io/get_helm.sh
+  246  chmod 700 get_helm.sh
+  247  ./get_helm.sh
+  248  kubectl create namespace tiller
+  249  export TILLER_NAMESPACE=tiller
+  250  export HELM_HOST=:44134
+  251  helm init --client-only
+  252  helm repo update
+  253  sudo yum -y install jq
+  254  DOWNLOAD_URL=$(curl --silent "https://api.github.com/repos/kubernetes-incubator/metrics-server/releases/latest" | jq -r .tarball_url)
+  255  DOWNLOAD_VERSION=$(grep -o '[^/v]*$' <<< $DOWNLOAD_URL)
+  256  curl -Ls $DOWNLOAD_URL -o metrics-server-$DOWNLOAD_VERSION.tar.gz
+  257  mkdir metrics-server-$DOWNLOAD_VERSION
+  258  tar -xzf metrics-server-$DOWNLOAD_VERSION.tar.gz --directory metrics-server-$DOWNLOAD_VERSION --strip-components 1
+  259  kubectl apply -f metrics-server-$DOWNLOAD_VERSION/deploy/1.8+/
+  260  kubectl get deployment metrics-server -n kube-system
+  261  kubectl get --raw /metrics
+  262  kubectl create namespace prometheus
+  263  helm install stable/prometheus --name prometheus --namespace prometheus --set alertmanager.persistentVolume.storageClass="gp2",server.persistentVolume.storageClass="gp2"
+  264  kubectl get pods -n prometheus
+  265  kubectl get hpa
+  266  gethpa
+  267  kubectl get hpa
+  268  kubectl get svc
+  269  kubectl get deployments
+  270  kubectl delete all -all
+  271  kubectl run -i --tty load-generator --image=busybox /bin/sh
+  272  kubectl delete all --all
+  273  kubectl create namespace test
+  274  kubectl config set-context $(kubectl config current-context) --namespace=test
+  275  kubectl config view | grep namespace:
+  276  kubectl apply f testapp/deploy.yaml
+  277  kubectl apply -f testapp/deploy.yaml
+  278  kubectl get pods
+  279  kubectl get svc
+  280  docker build -t abisethu1990/myfrontend:2.0 testapp/frontend
+  281  docker push abisethu1990/myfrontend:2.0
+  282  kubectl apply -f tsetapp/deploy.yaml
+  283  kubectl apply -f testapp/deploy.yaml
+  284  kubectl get rs
+  285  kubectl rollout history deployment.v1beta1.apps/apache-deployment 
+  286  kubectl --revision
+  287  kubectl rollout history deployment.v1beta1.apps/apache-deployment --revision=1
+  288  kubectl rollout undo deployment.v1beta1.apps/apache-deployment
+  289  kubectl get rs
+  290  kubectl rollout undo deployment.v1beta1.apps/apache-deployment --revision=2
+  291  kubectl rollout history  deployment.v1beta1.apps/apache-deployment --revision=2
+  292  kubectl rollout undo  deployment.v1beta1.apps/apache-deployment
+  293  kubectl get rs
+  294  kubectl rollout history  deployment.v1beta1.apps/apache-deployment --revision=3
+  295  kubectl rollout undo  deployment.v1beta1.apps/apache-deployment
+  296  kubectl rollout history  deployment.v1beta1.apps/apache-deployment --revision
+  297  kubectl rollout history  deployment.v1beta1.apps/apache-deployment
+  298  kubectl delete all -all
+  299  kubectl delete all --all
+  300  kubectl apply -f testapp/two-tier.yaml
+  301  kubectl get svc frontend
+  302  kubectl create namespace newtest
+  303  kubectl apply -f twotier.yaml --namespace=newtest
+  304  kubectl apply -f two-tier.yaml --namespace=newtest
+  305  kubectl apply -f testapp/two-tier.yaml --namespace=newtest
+  306  kubectl get pods --namespace=newtest
+  307  kubectlt --namespace=newtest exec -it frontend-c8665bf8b-h5cfn /bin/sh
+  308  kubectl --namespace=newtest exec -it frontend-c8665bf8b-h5cfn /bin/sh
+  309  kubectl apply -f testapp/two-tier.yaml --namespace=newtest
+  310  kubectl get pods --namespace=newtest
+  311  kubectl --namespace=newtest exec -it frontend-c8665bf8b-h5cfn
+  312  kubectl --namespace=newtest exec -it frontend-c8665bf8b-h5cfn /bin/sh
+  313  kubectl delete all --all
+  314  kubectl delete all -all --namespace=newtest
+  315  kubectl delete all --all --namespace=newtest
+  316  kubectl apply -f testapp/test-quoto.yaml
+  317  kubectl apply -f testapp/test-quota.yaml
+  318  kubectl describe quoto
+  319  kubectl describe quota
+  320  kubectl apply -f testapp/deploy.yaml
+  321  kubectl describe quota
+  322  kubectl apply -f testapp/pod.yaml
+  323  kubetl apply -f testapp/test-limit.yaml
+  324  kubectl apply -f testapp/test-limit.yaml
+  325  kubectl describe --namespace
+  326  kubectl describe namespace
+  327  kubectl apply -f testapp/pod.yaml
+  328  kubectl delete all -all
+  329  kubectl delete all --all
+  330  kubectl get nodes
+  331  kubectl label nodes ip-192-168-28-143.ec2.internal disktype=ssd
+  332  kubectl get nodes --show-labels
+  333  kubectl apply -f testapp/deploy.yaml
+  334  kubectl get pods
+  335  kubectl get deployments
+  336  kubectl describe rs apache-deployment
+  337  kubectl delete all --all
+  338  kubectl apply -f testapp/deploy.yaml --namespace=newtest
+  339  kubectl get pods --namespace=newtest
+  340  kubectl describe pod apache-deployment-64f9799978-9jbs5
+  341  kubectl apply -f testapp/liveliness.yaml
+  342  kubectl describe pod
+  343  eksctl delete cluster --region us-east-1 --name prod
+  344  git clone https://github.com/aws/aws-app-mesh-examples
+  345  cd aws-app-mesh-examples/examples/apps/djapp/
+  346  eksctl create cluster --region us-east-1 --name prod --version 1.13 --nodegroup-name standard-workers --node-type t3.medium --zones=us-east-1a,us-east-1b,us-east-1c --nodes 4 --nodes-min 4 --nodes-max 4 --node-ami auto --appmesh-access
+  347  kubectl get nodes
+  348  export AWS_DEFAULT_REGION=us-east-1
+  349  kubectl apply -f 1_create_the_initial_architecture/1_prod_ns.yaml
+  350  kubectl apply -nprod -f 1_create_the_initial_architecture/1_initial_architecture_deployment.yaml
+  351  kubectl apply -nprod -f 1_create_the_initial_architecture/1_initial_architecture_services.yaml
+  352  kubectl get all -nprod
+  353  kubectl get pods -nprod -l app=dj
+  354  kubectl exec -nprod -it dj-7fbb4d499c-rc8vf  bash
+  355  cd 2_create_injector
+  356  ./create.sh
+  357  cd ..
+  358  kubectl label namespace prod appmesh.k8s.aws/sidecarInjectorWebhook=enabled
+  359  namespace/prod labeled
+  360  kubectl get pods -nappmesh-inject
+  361  kubectl apply -f 3_add_crds/mesh-definition.yaml
+  362  kubectl apply -f 3_add_crds/virtual-node-definition.yaml
+  363  kubectl apply -f 3_add_crds/virtual-service-definition.yaml
+  364  kubectl apply -f 3_add_crds/controller-deployment.yaml
+  365  kubectl get pods -nappmesh-system
+  366  kubectl create -f 4_create_initial_mesh_components/mesh.yaml
+  367  kubectl apply -nprod -f 4_create_initial_mesh_components/virtual-services.yaml
+  368  kubectl create -nprod -f 4_create_initial_mesh_components/metal_and_jazz_placeholder_services.yaml
+  369  kubectl create -f 4_create_initial_mesh_components/nodes_representing_virtual_services.yaml
+  370  kubectl create -nprod -f 4_create_initial_mesh_components/nodes_representing_physical_services.yaml
+  371  kubectl patch deployment dj -nprod -p "{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"date\":\"`date +'%s'`\"}}}}}"
+  372  kubectl patch deployment metal-v1 -nprod -p "{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"date\":\"`date +'%s'`\"}}}}}"
+  373  kubectl patch deployment jazz-v1 -nprod -p "{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"date\":\"`date +'%s'`\"}}}}}"
+  374  kubectl get pods --nprod
+  375  kubectl get pods -nprod
+  376  kubectl get pods -nprod -lapp=dj
+  377  kubectl exec -nprod -it  dj-6d645f7cb7-gcc2v  -c dj bash
+  378  kubectl apply -nprod -f 5_canary/jazz_v2.yaml
+  379  kubectl describe virtualservice jazz -nprod
+  380  kubectl apply -nprod -f 5_canary/jazz_service_update.yaml
+  381  kubectl describe virtualservice jazz -nprod
+  382  kubectl apply -nprod -f 5_canary/metal_v2.yaml
+  383  kubectl apply -nprod -f 5_canary/metal_service_update.yaml
+  384  kubectl describe virtualservice metal -nprod
+  385  kubectl get pods -nprod -l app=dj
+  386  kubectl exec -nprod -it dj-6d645f7cb7-gcc2v -c dj bash
+  387  ./cleanup.sh
+  388  kubectl apply -f https://k8s.io/examples/application/mysql/mysql-configmap.yaml
+  389  kubectl apply -f https://k8s.io/examples/application/mysql/mysql-services.yaml
+  390  cd
+  391  kubectl apply -f database.yaml
+  392  kubectl apply -f testapp/database.yaml
+  393  kubectl apply -f testapp\database.yaml
+  394  kubectl apply -f testapp/database.yaml
+  395  exit
+  396  kubectl apply -f testapp/database.yaml
+  397  kubectl get pods
+  398  kubectl get pods -l app=mysql --watch
+  399  kubectl get pods
+  400  kubectl get pvc
+  401  kubectl run mysql-client --image=mysql:5.7 -i --rm --restart=Never --  mysql -h mysql-0.mysql <<EOFCREATE DATABASE test;
+  402  CREATE TABLE test.messages (message VARCHAR(250));
+  403  INSERT INTO test.messages VALUES ('hello');
+  404  EOF
+  405  kubectl run mysql-client --image=mysql:5.7 -i -t --rm --restart=Never --  mysql -h mysql-read -e "SELECT * FROM test.messages"
+  406  curl -LO https://git.io/get_helm.sh
+  407  chmod 700 get_helm.sh
+  408  ./get_helm.sh
+  409  kubectl create namespace tiller
+  410  export TILLER_NAMESPACE=tiller
+  411  export HELM_HOST=:44134
+  412  helm init --client-only
+  413  helm repo update
+  414  helm create testappchart
+  415  helm lint testappchart
+  416  helm package testappchart
+  417  helm install testappchart
+  418  helm ls
+  419  helm delete fair-catfish
+  420  helm ls
+  421  git clone https://github.com/abisethu1990/threetier.git
+  422  sudo yum -y install java-1.8.0-openjdk.x86_64
+  423  wxit
+  424  exit
+  425  sudo yum -y install java-1.8.0-openjdk.x86_64
+  426  docker images
+  427  docker rmi lambci/lambda
+  428  docker rmi ubuntu:18.04
+  429  docker rmi ubuntu:latest
+  430  docker rmi php:latest
+  431  sudo yum -y install java-1.8.0-openjdk.x86_64
